@@ -1,0 +1,122 @@
+/* ============================================================
+   responsive.css — Responsive & Adaptive Styles
+   ============================================================ */
+
+/* ---- Mobile-first base is in components.css ---- */
+
+/* === TABLET: 540px+ === */
+@media (min-width: 540px) {
+  #app {
+    /* Keep centered mobile shell */
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .bottom-nav {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .modal-sheet,
+  .confirm-overlay {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* === DESKTOP: 768px+ === */
+@media (min-width: 768px) {
+  /* Slightly bigger type on large screens */
+  .task-title     { font-size: 14px; }
+  .modal-title    { font-size: 18px; }
+
+  /* Hover states more prominent */
+  .task-item:hover { transform: translateX(2px); }
+
+  /* Bigger stats numbers */
+  .pstat .val     { font-size: 22px; }
+  .streak-card .val { font-size: 30px; }
+
+  /* Progress card bigger ring */
+  .progress-ring-wrap {
+    width: 96px; height: 96px;
+  }
+  .ring-label .pct { font-size: 22px; }
+
+  /* Show both columns for streak cards */
+  .streak-grid { grid-template-columns: 1fr 1fr; }
+
+  .fab {
+    right: calc(50% - 230px + 20px);
+    width: 58px; height: 58px;
+  }
+}
+
+/* === LARGE DESKTOP: 1024px+ === */
+@media (min-width: 1024px) {
+  /* Desktop sidebar hint effect */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 70% at 10% 50%, rgba(79,142,247,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 90% 50%, rgba(139,111,245,0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .screen-header { padding-top: 28px; }
+}
+
+/* === VERY SMALL SCREENS: <360px === */
+@media (max-width: 360px) {
+  .priority-chips { gap: 5px; }
+  .priority-chip  { font-size: 11px; padding: 7px 2px; }
+
+  .filter-chip { padding: 5px 10px; font-size: 11px; }
+
+  .progress-card { flex-direction: column; text-align: center; }
+  .progress-stats { justify-content: center; }
+
+  .stat-pill { min-width: 80px; }
+  .streak-grid { grid-template-columns: 1fr 1fr; }
+
+  .form-body { gap: var(--sp-sm); }
+}
+
+/* === LANDSCAPE PHONES === */
+@media (max-height: 600px) and (orientation: landscape) {
+  .modal-sheet   { max-height: 90dvh; }
+  .modal-handle  { margin: 8px auto 12px; }
+  .modal-header  { padding-bottom: var(--sp-sm); margin-bottom: var(--sp-sm); }
+  .form-body     { gap: var(--sp-sm); }
+  .form-footer   { padding-top: var(--sp-sm); }
+  .empty-state   { padding: 24px; }
+}
+
+/* === HIGH DPI / RETINA === */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Thinner borders look crisp on retina */
+  .task-item     { border-width: 0.5px; }
+  .bottom-nav    { border-top-width: 0.5px; }
+  .modal-sheet   { border-top-width: 0.5px; }
+  .progress-card { border-width: 0.5px; }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === DARK MODE FORCED (already dark, but ensure consistency) === */
+@media (prefers-color-scheme: light) {
+  /* App is always dark regardless of system theme */
+  body { color-scheme: dark; }
+}

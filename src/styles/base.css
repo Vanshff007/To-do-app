@@ -1,0 +1,111 @@
+/* ============================================================
+   base.css — Reset, Typography & Global Layout
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Subtle radial gradient background */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,142,247,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(139,111,245,0.06) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* --- App Shell --- */
+#app {
+  max-width: 460px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Typography Scale --- */
+h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1.2; color: var(--text-primary); }
+h2 { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text-primary); }
+h3 { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+p  { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+small { font-size: 11px; }
+
+/* --- Utility Classes --- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+.flex        { display: flex; }
+.flex-col    { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm      { gap: var(--sp-sm); }
+.gap-md      { gap: var(--sp-md); }
+.gap-lg      { gap: var(--sp-lg); }
+
+.truncate    { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.text-accent { color: var(--blue); }
+.text-muted  { color: var(--text-secondary); }
+.text-hint   { color: var(--text-hint); }
+
+/* Spacer at bottom for nav clearance */
+.bottom-spacer { height: 90px; flex-shrink: 0; }
+
+/* --- Scrollbars --- */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* --- Selection --- */
+::selection { background: rgba(79,142,247,0.3); color: var(--text-primary); }
+
+/* --- Focus rings --- */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+/* --- Page transition --- */
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.screen.active {
+  display: flex;
+  animation: screenIn var(--t-slow) ease both;
+}
+
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

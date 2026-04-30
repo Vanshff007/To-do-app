@@ -1,0 +1,89 @@
+/* ============================================================
+   variables.css — Design Tokens
+   ============================================================ */
+:root {
+  /* --- Backgrounds --- */
+  --bg-app:       #080c18;
+  --bg-surface:   #0f1528;
+  --bg-card:      #131a30;
+  --bg-card-alt:  #192038;
+  --bg-input:     #0d1222;
+  --bg-hover:     #1a2240;
+  --bg-modal:     rgba(8, 12, 24, 0.85);
+
+  /* --- Accent Palette --- */
+  --blue:         #4f8ef7;
+  --blue-light:   #7aaeff;
+  --blue-glow:    rgba(79, 142, 247, 0.22);
+  --cyan:         #00d4c8;
+  --cyan-glow:    rgba(0, 212, 200, 0.18);
+  --violet:       #8b6ff5;
+  --violet-glow:  rgba(139, 111, 245, 0.18);
+  --rose:         #f06292;
+  --amber:        #ffa040;
+  --green:        #34d399;
+  --red:          #f87171;
+
+  /* --- Text --- */
+  --text-primary:   #e8ecf8;
+  --text-secondary: #7b85ab;
+  --text-hint:      #4a5270;
+  --text-on-accent: #ffffff;
+
+  /* --- Borders --- */
+  --border:       rgba(255,255,255,0.06);
+  --border-focus: rgba(79,142,247,0.55);
+  --border-card:  rgba(255,255,255,0.05);
+
+  /* --- Priority Colors --- */
+  --priority-high:   #f87171;
+  --priority-med:    #ffa040;
+  --priority-low:    #34d399;
+
+  /* --- Category Colors --- */
+  --cat-work:     #4f8ef7;
+  --cat-personal: #8b6ff5;
+  --cat-meeting:  #f06292;
+  --cat-health:   #34d399;
+  --cat-finance:  #ffa040;
+  --cat-other:    #7b85ab;
+
+  /* --- Spacing --- */
+  --sp-xs:  4px;
+  --sp-sm:  8px;
+  --sp-md:  14px;
+  --sp-lg:  20px;
+  --sp-xl:  28px;
+  --sp-2xl: 40px;
+
+  /* --- Radii --- */
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-full: 9999px;
+
+  /* --- Typography --- */
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* --- Transitions --- */
+  --t-fast:   0.12s ease;
+  --t-base:   0.2s ease;
+  --t-slow:   0.35s ease;
+  --t-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Shadows --- */
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.4);
+  --shadow-modal: 0 24px 80px rgba(0,0,0,0.7);
+  --shadow-fab:   0 6px 28px rgba(79,142,247,0.5);
+
+  /* --- Z-layers --- */
+  --z-base:   1;
+  --z-sticky: 10;
+  --z-modal:  100;
+  --z-fab:    50;
+  --z-toast:  200;
+}
